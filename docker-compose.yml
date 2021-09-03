@@ -7,4 +7,4 @@ services:
     environment:
       - TERM=xterm-256color
     volumes:
-      - ..:/home/cis380
+      - ${CIS380_PROJECT_HOME:?variable empty or unset}:/home/cis380
