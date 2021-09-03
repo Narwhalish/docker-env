@@ -2,8 +2,8 @@ version: '3.8'
 services:
   mcit:
     build: .
-    image: cis548/docker-env
+    # image: cis548/docker-env
     environment:
       - TERM=xterm-256color
     volumes:
-      - .:/home/cit595
+      - .:/home/cis380

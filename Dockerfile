@@ -12,13 +12,14 @@ RUN sed -i 's,^path-exclude=/usr/share/man/,#path-exclude=/usr/share/man/,' /etc
 COPY docker-setup.sh .
 RUN chmod +x docker-setup.sh
 RUN ./docker-setup.sh
-# Setting up cit595 as the user 
+
+# Setting up cis380 as the user 
 ARG GID=1000
 ARG UID=1000
-RUN addgroup --gid $GID cit595
-RUN useradd --system --create-home --shell /bin/bash --groups sudo -p "$(openssl passwd -1 mcit)" --uid $UID --gid $GID cit595
-RUN wget -O /root/.vimrc https://raw.githubusercontent.com/CIS548/gists/master/example_vimrc.txt
-RUN cp /root/.vimrc /home/cit595/.vimrc
-RUN chown cit595:cit595 /home/cit595/.vimrc
-USER cit595
-WORKDIR /home/cit595/
+RUN addgroup --gid $GID cis380
+RUN useradd --system --create-home --shell /bin/bash --groups sudo -p "$(openssl passwd -1 cis)" --uid $UID --gid $GID cis380
+RUN wget -O /root/.vimrc https://gist.githubusercontent.com/Narwhalish/074047500345a9a3fcbd15811d3a4b31/raw/342e69705163d03d2296c30d6794b5fdbb5ac756/.vimrc
+RUN cp /root/.vimrc /home/cis380/.vimrc
+RUN chown cis380:cis380 /home/cis380/.vimrc
+USER cis380
+WORKDIR /home/cis380/
