@@ -2,8 +2,8 @@ version: '3.8'
 services:
   cis:
     build: .
-    # image: cis548/docker-env
+    image: cis380/docker-env
     environment:
       - TERM=xterm-256color
     volumes:
-      - .:/home/cis380
+      - ..:/home/cis380
