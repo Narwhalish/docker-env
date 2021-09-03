@@ -18,7 +18,7 @@ ARG GID=1000
 ARG UID=1000
 RUN addgroup --gid $GID cis380
 RUN useradd --system --create-home --shell /bin/bash --groups sudo -p "$(openssl passwd -1 cis)" --uid $UID --gid $GID cis380
-RUN wget -O /root/.vimrc https://gist.githubusercontent.com/Narwhalish/074047500345a9a3fcbd15811d3a4b31/raw/342e69705163d03d2296c30d6794b5fdbb5ac756/.vimrc
+RUN wget -O /root/.vimrc https://gist.githubusercontent.com/Narwhalish/8262fb92f002530244a20edb6af7b190/raw/abc8cb703c782dc461d2add5930bfe66ff82da96/project-env-setup.sh
 RUN cp /root/.vimrc /home/cis380/.vimrc
 RUN chown cis380:cis380 /home/cis380/.vimrc
 USER cis380
