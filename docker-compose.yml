@@ -1,7 +1,6 @@
 version: '3.8'
 services:
   cis380:
-    container_name: cis380-docker-env
     build: .
     image: cis380/docker-env
     environment:
